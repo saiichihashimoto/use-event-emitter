@@ -1,0 +1,64 @@
+{
+  "name": "use-event-emitter",
+  "version": "0.0.0-development",
+  "description": "react hook for node's EventEmitter",
+  "keywords": [
+    "event emitter",
+    "event-emitter",
+    "eventemitter",
+    "hook",
+    "node",
+    "react"
+  ],
+  "homepage": "https://saiichihashimoto.github.io/use-event-emitter/",
+  "bugs": {
+    "url": "https://github.com/saiichihashimoto/use-event-emitter/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saiichihashimoto/use-event-emitter.git"
+  },
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src --out-dir lib --source-maps --delete-dir-on-start --verbose --ignore \"**/*.spec.js\"",
+    "test": "jest --verbose $(if [ -z ${CI+x} ]; then echo --watch; else echo --color --coverage; fi)"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "eslintConfig": {
+    "extends": "saiichihashimoto"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.5.5",
+    "@babel/core": "7.5.5",
+    "@babel/preset-env": "7.5.5",
+    "@stryker-mutator/babel-transpiler": "2.0.2",
+    "@stryker-mutator/core": "2.0.2",
+    "@stryker-mutator/javascript-mutator": "2.0.2",
+    "@stryker-mutator/jest-runner": "2.0.2",
+    "@testing-library/react-hooks": "2.0.1",
+    "cz-conventional-changelog": "3.0.2",
+    "eslint-config-saiichihashimoto": "2.0.29",
+    "husky": "3.0.3",
+    "jest": "24.8.0",
+    "lint-my-app": "3.7.5",
+    "react": "16.9.0",
+    "react-test-renderer": "16.9.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0"
+  },
+  "engines": {
+    "node": "12.8.0"
+  }
+}

@@ -1,0 +1,11 @@
+_extends: .github
+repository:
+  name: use-event-emitter
+  description: react hook for node's EventEmitter
+  homepage: https://saiichihashimoto.github.io/use-event-emitter/
+  topics: event emitter, event-emitter, eventemitter, hook, node, react
+branches:
+  - name: master
+    protection:
+      required_status_checks:
+        contexts: ['Semantic Pull Request', 'WIP', 'continuous-integration/travis-ci', 'coverage/coveralls']

@@ -14,6 +14,7 @@ after_script:
   - cat ./coverage/lcov.info | npx coveralls
 jobs:
   include:
+    - stage: test
     - stage: release
       if: type = push
       before_deploy: npm run build

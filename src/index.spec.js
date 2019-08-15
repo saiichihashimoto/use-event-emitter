@@ -72,6 +72,22 @@ it('switches handlers', () => {
 	expect(secondHandler).toHaveBeenCalledWith('value');
 });
 
+it('calls handlers in order', () => {
+	const firstHandler = jest.fn();
+	const secondHandler = jest.fn();
+
+	firstHandler.mockImplementation(() => expect(secondHandler).not.toHaveBeenCalled());
+	secondHandler.mockImplementation(() => expect(firstHandler).toHaveBeenCalledWith('value'));
+
+	renderHook(() => useEventEmitter(emitter, 'some event', firstHandler));
+	renderHook(() => useEventEmitter(emitter, 'some event', secondHandler));
+
+	emitter.emit('some event', 'value');
+
+	expect(secondHandler).toHaveBeenCalledTimes(1);
+	expect(firstHandler).toHaveBeenCalledTimes(1);
+});
+
 it('can specify once', () => {
 	const handler = jest.fn();
 	renderHook(() => useEventEmitter(emitter, 'some event', handler, { once: true }));
@@ -79,8 +95,9 @@ it('can specify once', () => {
 	emitter.emit('some event', 'value');
 	emitter.emit('some event', 'other value');
 
-	expect(handler).toHaveBeenCalledTimes(1);
 	expect(handler).toHaveBeenCalledWith('value');
+	expect(handler).not.toHaveBeenCalledWith('other value');
+	expect(handler).toHaveBeenCalledTimes(1);
 });
 
 it('can specify prepend', () => {

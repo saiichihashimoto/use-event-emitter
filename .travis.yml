@@ -15,6 +15,7 @@ after_script:
 jobs:
   include:
     - stage: test
+      if: type = pull_request
     - stage: release
       if: type = push
       before_deploy: npm run build

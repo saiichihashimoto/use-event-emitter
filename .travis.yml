@@ -3,7 +3,6 @@ cache: npm
 branches:
   only:
     - master
-    - /^greenkeeper/.*$/
 notifications:
   email:
     recipients:

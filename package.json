@@ -39,21 +39,21 @@
     "testEnvironment": "node"
   },
   "devDependencies": {
-    "@babel/cli": "7.6.4",
-    "@babel/core": "7.6.4",
-    "@babel/preset-env": "7.6.3",
-    "@stryker-mutator/babel-transpiler": "2.1.0",
-    "@stryker-mutator/core": "2.1.0",
-    "@stryker-mutator/javascript-mutator": "2.1.0",
-    "@stryker-mutator/jest-runner": "2.1.0",
+    "@babel/cli": "7.7.5",
+    "@babel/core": "7.7.5",
+    "@babel/preset-env": "7.7.6",
+    "@stryker-mutator/babel-transpiler": "2.4.0",
+    "@stryker-mutator/core": "2.4.0",
+    "@stryker-mutator/javascript-mutator": "2.4.0",
+    "@stryker-mutator/jest-runner": "2.4.0",
     "@testing-library/react-hooks": "3.2.1",
     "cz-conventional-changelog": "3.0.2",
-    "eslint-config-saiichihashimoto": "2.0.52",
-    "husky": "3.0.9",
+    "eslint-config-saiichihashimoto": "2.0.63",
+    "husky": "3.1.0",
     "jest": "24.9.0",
-    "lint-my-app": "3.7.25",
-    "react": "16.11.0",
-    "react-test-renderer": "16.11.0"
+    "lint-my-app": "3.7.37",
+    "react": "16.12.0",
+    "react-test-renderer": "16.12.0"
   },
   "peerDependencies": {
     "react": "^16.8.0"
